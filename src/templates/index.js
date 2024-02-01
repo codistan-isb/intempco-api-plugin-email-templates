@@ -9,6 +9,7 @@ import orderShippedTemplate from "./orders/shipped.js";
 import orderRefundedTemplate from "./orders/refunded.js";
 import orderItemRefundTemplate from "./orders/itemRefund.js";
 import sendEmailOTPTemplate from "./accounts/otpEmail.js";
+import resetUsername from './accounts/resetUsername.js'
 import adminCredentialsEmail from "./accounts/adminCredentialsEmail.js";
 import sendEmailOTPResetPassword from "./accounts/resetPasswordOtpEmail.js";
 
@@ -37,6 +38,13 @@ export default [
     name: "accounts/otpEmail",
     template: sendEmailOTPTemplate,
     subject: "Your otp to create new account",
+  },
+  {
+    language: "en",
+    title: "Username",
+    name: "accounts/resetUsername",
+    template: resetUsername,
+    subject: "Your Username Retrieval Request",
   },
   {
     language: "en",
