@@ -12,7 +12,9 @@ import sendEmailOTPTemplate from "./accounts/otpEmail.js";
 import resetUsername from './accounts/resetUsername.js'
 import adminCredentialsEmail from "./accounts/adminCredentialsEmail.js";
 import sendEmailOTPResetPassword from "./accounts/resetPasswordOtpEmail.js";
-
+import orderAcceptanceTemplate from "./orders/orderAcceptance.js";
+import orderRejectionTemplate from "./orders/orderRejection.js";
+import quotationTemplate from "./orders/quotation.js";
 export default [
   /*
    * Default email templates
@@ -148,6 +150,7 @@ export default [
     subject: "{{shop.name}}: Your order has shipped - {{order.referenceId}}",
   },
 
+  
   /*
    * Orders - Order Refunded
    * When: Admin completes the order flow and item is shipped
@@ -173,4 +176,40 @@ export default [
     template: orderItemRefundTemplate,
     subject: "{{shop.name}}: Refund confirmation - {{order.referenceId}}",
   },
+
+  /*
+   * Orders - Order Acceptance
+   */
+
+  {
+    language: "en",
+    title: "Orders - Order Acceptance",
+    name: "orders/orderAcceptance",
+    template: orderAcceptanceTemplate,
+    subject: "{{shop.name}}: Your order has been Accepted - {{order.referenceId}}",
+  },
+
+   /*
+   * Orders - Order Rejection
+   */
+
+   {
+    language: "en",
+    title: "Orders - Order Rejection",
+    name: "orders/orderRejection",
+    template: orderRejectionTemplate,
+    subject: "{{shop.name}}: Your order has been Rejected - {{order.referenceId}}",
+  },
+
+     /*
+   * Orders - Order Rejection
+   */
+
+     {
+      language: "en",
+      title: "Orders - Order Quotation",
+      name: "orders/quotation",
+      template: quotationTemplate,
+      subject: "{{shop.name}}: Your order Quotation - {{order.referenceId}}",
+    },
 ];
